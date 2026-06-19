@@ -69,32 +69,6 @@ Traduce la IP pública `200.1.1.10` hacia el servidor interno `192.168.30.10`, p
 | Internet (8.8.8.10) | Servidor Web (200.1.1.10 → 192.168.30.10) | ✅ Permitido vía NAT estático |
 | Internet | LAN interna | ❌ Bloqueado |
 
-## Evidencias
-
-### Configuración de interfaces del Firewall
-![Interfaces Firewall](firewall-interfaces.png)
-
-### Tabla de rutas
-![Tabla de rutas](routing-table.png)
-
-### Salida a Internet desde la LAN
-![Salida Internet](internet-access.png)
-
-### Traducciones NAT/PAT
-![NAT Translations](nat-translations.png)
-
-### Publicación del servidor web mediante NAT estático
-![Static NAT](static-nat.png)
-
-### Acceso externo al servidor web
-![External Web Access](external-web-access.png)
-
-### Comunicación con la DMZ
-![DMZ Connectivity](dmz-connectivity.png)
-
-### Estado final de las traducciones NAT
-![NAT Status](nat-status.png)
-
 ## Concepto adicional descubierto
 Una conexión realizada **desde dentro de la empresa hacia la propia IP pública del servidor** no funciona con la configuración NAT estándar. Esto requiere una técnica adicional llamada **NAT Hairpin** (o NAT Loopback), donde el Firewall debe permitir que el tráfico "regrese" hacia la misma red interna desde la que salió.
 
